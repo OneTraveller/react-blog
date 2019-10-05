@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Icon, Input, Button, message } from 'antd';
+import { post } from '../../server/api';
 import './login.scss';
 
 export default class Login extends Component {
@@ -8,12 +9,18 @@ export default class Login extends Component {
     this.state = { username: '', password: '' };
   };
 
-  handleSubmit () {
+  async handleSubmit () {
     const { username, password } = this.state;
     if (username && password) {
-      // todo
-      // message.error('用户名或密码错误');
-      this.props.history.push({ pathname: 'home' });
+      const res = await post('/login', { username, password }) || {};
+      if (!res.state) {
+        if (res.msg === 'password err') {
+          message.error('密码错误');
+        } else if (res.msg === 'username err') {
+          message.error('用户名不存在');
+        }
+      }
+      if (res.state) this.props.history.push({ pathname: 'home' });
     } else {
       message.error('请填写用户名和密码');
     }
