@@ -1,0 +1,16 @@
+.nba-detail {
+  .content {
+    text-align: left;
+    .img {
+      float: left;
+      width: 200px;
+      height: 200px;
+      border: 1px solid;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .text {
+      text-indent: 2rem;
+    }
+  }
+}
