@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Icon, Input, Button, message } from 'antd';
+import { store } from '../../store';
 import { post } from '../../server/api';
 import './login.scss';
 
@@ -20,7 +21,10 @@ export default class Login extends Component {
           message.error('用户名不存在');
         }
       }
-      if (res.state) this.props.history.push({ pathname: 'home' });
+      if (res.state) {
+        store.dispatch({ type: 'setUserInfo', data: { name: res.name } });
+        this.props.history.push({ pathname: 'home' });
+      }
     } else {
       message.error('请填写用户名和密码');
     }

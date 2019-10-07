@@ -120,7 +120,7 @@ export default class NBA extends Component {
     return (
       <div className="nba-page">
         <div className="search-outer">
-          <Input.Search placeholder="input search text" onSearch={val => this.handleSearch(val)} enterButton />
+          <Input.Search placeholder="请输入标题" onSearch={val => this.handleSearch(val)} enterButton />
           <Button className="add-btn" type="primary" onClick={() => this.handleAdd()}>添加</Button>
         </div>
 

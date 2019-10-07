@@ -3,6 +3,7 @@ import { Layout, Menu, Icon, Modal } from 'antd';
 import HomeRouter from '../../router/HomeRouter';
 import './home.scss';
 import Option from './option';
+import { store } from '../../store';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -14,11 +15,12 @@ export default class Home extends Component {
   } */
 
   quit () {
+    const _this = this;
     Modal.confirm({
       title: '消息提示',
       content: '确定要退出吗？',
       onOk () {
-        // todo
+        _this.props.history.push({ pathname: '/' })
       },
       okText: "确认",
       cancelText: "取消"
@@ -35,7 +37,7 @@ export default class Home extends Component {
         <Header className="header">
           <div className="logo"></div>
           <div className="username">
-            <span>admin</span>
+            <span>{(store.getState().userInfo || {}).name}</span>
             <span onClick={this.quit.bind(this)}>退出</span>
           </div>
         </Header>
