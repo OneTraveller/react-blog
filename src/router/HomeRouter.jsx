@@ -12,7 +12,7 @@ export default class MainContent extends Component {
     return (
       <div>
         <Route exact path="/home" component={NBA}></Route>
-        <Route path="/home/nba/nbaDetail" component={NBADetail}></Route>
+        <Route path="/home/nba/nbaDetail/:id" component={NBADetail}></Route>
         <Route path="/home/cba" component={CBA}></Route>
         <Route path="/home/inlandNews" component={InlandNews}></Route>
         <Route path="/home/foreignNews" component={ForeignNews}></Route>

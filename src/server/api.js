@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const qs = require('qs');
 
-const prefix = 'http://localhost:8080'
+const prefix = 'http://localhost:8081'
 
 export function get (url, query) {
   axios.get(`${prefix}${url}`, {
@@ -14,14 +14,17 @@ export function get (url, query) {
   });
 }
 
-export function post (url, query) {
+export function post (url, query, upload) {
+  const data = upload ? query : qs.stringify(query);
   return axios.post(
     `${prefix}${url}`,
-    qs.stringify(query),
-    { headers: { 'Content-type': 'application/x-www-form-urlencoded' } },
+    data,
+    // { headers: { 'Content-type': 'application/x-www-form-urlencoded' } },
   ).then((res = {}) => {
     return res.data;
   }).catch((err) => {
     console.log(err);
   })
 }
+
+export const HTTP_ORIGIN = 'http://localhost:8088/static/upload/';
