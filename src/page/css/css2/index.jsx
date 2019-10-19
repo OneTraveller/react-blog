@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Icon } from 'antd';
+import imgUrl from '../../../static/img/ai.jpg';
+import zIndexImgUrl from '../../../static/img/zIndex.jpg';
 import './css2.scss';
 
 export default class Css2 extends Component {
@@ -82,9 +85,55 @@ export default class Css2 extends Component {
           </div>
         </div>
 
+        <h3>10.不依赖相对定位的绝对定位</h3>
         <div className="box-10">
-
+          <Icon type="menu-fold" />
+          <img src={imgUrl} alt="" />
         </div>
+
+        <h3>11.层叠顺序</h3>
+        <div className="box-11">
+          <div>
+            从小到大：<br />
+            • background/border <br />
+            • 负z-index <br />
+            • block块状水平盒子 <br />
+            • float盒子 <br />
+            • inline水平盒子 <br />
+            • z-index:auto或者z-index:0 <br />
+            • 正z-index
+          </div>
+          <img src={zIndexImgUrl} alt="" />
+        </div>
+
+        <h3>12.text-indent与纯文本对齐布局实例页面</h3>
+        <div className="box-12">
+          提问：你听过张三的歌吗，很好听的歌曲。你听过张三的歌吗，很好听的歌曲你听过张三的歌吗，很好听的
+        </div>
+
+        <h3>13.letter-spacing与字符动效实例页面</h3>
+        <div className="box-13">
+          我是标题文字内容
+        </div>
+
+        <h3>14.设定大写</h3>
+        <div className="box-14">
+          You belong to me
+        </div>
+
+        <h3>15.direction与button的呈现顺序实例</h3>
+        <div className="box-15" dir="rtl">
+          <button>button1</button>
+          <button>button2</button>
+        </div>
+
+        {/* <h3>16.outline与底部填满屏幕的大面积色块实例</h3>
+        <div className="box-16">
+          <div className="body">body</div>
+          <div className="footer">
+            <p>footer</p>
+          </div>
+        </div> */}
 
       </div>
     )
