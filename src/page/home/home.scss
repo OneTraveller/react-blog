@@ -9,7 +9,7 @@
     position: relative;
     &::after {
       position: absolute;
-      content: '后台管理';
+      content: 'bear';
       top: -16px;
       left: 0;
       right: 0;
@@ -17,12 +17,7 @@
       text-align: center;
     }
   }
-  .username {
-    float: right;
-    color: #fff;
-    span + span {
-      cursor: pointer;
-      padding: 10px;
-    }
+  .ant-menu {
+    text-align: left;
   }
 }

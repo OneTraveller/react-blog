@@ -1,31 +1,13 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon, Modal } from 'antd';
-import HomeRouter from '../../router/HomeRouter';
+import { Layout, Menu, Icon } from 'antd';
 import './home.scss';
 import Option from './option';
-import { store } from '../../store';
+import HomeRouter from '../../router/HomeRouter'
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 export default class Home extends Component {
-  /* constructor(props) {
-    super(props);
-    this.state = { Option };
-  } */
-
-  quit () {
-    const _this = this;
-    Modal.confirm({
-      title: '消息提示',
-      content: '确定要退出吗？',
-      onOk () {
-        _this.props.history.push({ pathname: '/' })
-      },
-      okText: "确认",
-      cancelText: "取消"
-    });
-  };
 
   jump (path) {
     this.props.history.push({ pathname: path });
@@ -36,10 +18,6 @@ export default class Home extends Component {
       <Layout className="home-page">
         <Header className="header">
           <div className="logo"></div>
-          <div className="username">
-            <span>{(store.getState().userInfo || {}).name}</span>
-            <span onClick={this.quit.bind(this)}>退出</span>
-          </div>
         </Header>
         <Layout>
           <Sider width={200} style={{ background: '#fff' }}>

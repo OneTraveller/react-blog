@@ -1,0 +1,200 @@
+.css2-page {
+  h1 {
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+
+  [class^="box-"] {
+    margin: 10px;
+  }
+
+  text-align: left;
+  button {
+    border: 10px solid transparent;
+    cursor: pointer;
+  }
+
+  .box-2 {
+    max-width: 200px;
+    width: 500px!important;
+    height: 100px;
+    border: 1px solid #f00;
+  }
+
+  .box-3 {
+    #check {
+      position: absolute;
+      clip: rect(0 0 0 0);
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background: #f00;
+      max-height: 100px;
+      transition: max-height .3s;
+    }
+    :checked + div {
+      max-height: 0;
+    }
+    label {
+      cursor: pointer;
+      color: blueviolet;
+    }
+    input ~ .check-in, input:checked ~ .check-out {
+      display: none;
+    }
+    input ~ .check-out, input:checked ~ .check-in {
+      display: inline-block;
+    }
+  }
+
+  .box-4 {
+    font-size: 16px;
+    i {
+      display: inline-block; 
+      height: 1em;
+      line-height: 1;
+      text-align: left;
+      vertical-align: -.25em;
+      overflow: hidden;
+    }
+    i::before {
+        display: block;
+        content: '...\A..\A.';
+        white-space: pre-wrap;
+        animation: dot 3s infinite step-start both;
+    }
+    @keyframes dot {
+        33% { transform: translateY(-2em); }
+        66% { transform: translateY(-1em); }
+    }
+  }
+
+  .box-5 {
+    img {
+      display: block;
+      width: 256px;
+      height: 192px;
+      position: relative;
+      overflow: hidden;
+    }
+    img::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: #eee;
+    }
+    img::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,.5);
+      line-height: 32px;
+      content: attr(alt);
+      transform: translateY(100%);
+      font-size: 14px;
+      color: #fff;
+      transition: transform .3s;
+      visibility: visible;
+      text-align: center;
+    }
+    img:hover::after {
+      transform: translate(0)
+    }
+  }
+
+  .box-6 {
+    font: 200% monospace;
+    border-right: .08em solid;
+    width: 34ch; // 一个中文的width为2ch
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 6s steps(17, end),
+              blink-caret .5s step-end infinite alternate; 
+    // 模拟打字效果
+    @keyframes typing {
+      from { width: 0}
+    }
+    // 模拟光标闪动
+    @keyframes blink-caret {
+      50% { border-color: transparent; }
+    }
+  }
+
+  .box-7 {
+    .icon-menu, .icon-dot {
+      box-sizing: content-box;
+      vertical-align: middle;
+    }
+    .icon-menu {
+      display: inline-block;
+      width: 140px; height: 10px;
+      padding: 35px 0;
+      border-top: 10px solid;
+      border-bottom: 10px solid;
+      background-color: currentColor;
+      background-clip: content-box;
+      margin: 0 10px;
+    }
+    .icon-dot {
+        display: inline-block;
+        width: 100px; height: 100px;
+        padding: 10px;
+        border: 10px solid;    
+        border-radius: 50%;
+        background-color: currentColor;
+        background-clip: content-box;
+    }
+  }
+
+  .box-8 {
+    border-left: 150px solid #333;
+    background-color: #aaa;
+    text-align: center;
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    nav {
+      width: 150px;
+      margin-left: -150px;
+      float: left;
+    }
+    .nav-item, .module {
+      line-height: 40px;
+      color: #fff;
+      margin-bottom: 0;
+    }
+  }
+
+  .box-9 {
+    width: 300px;
+    .width {
+      width: 100%;
+    }
+    
+    .nav {
+      background-color: #cd0000;
+    }
+    .nav-a {
+      display: block;
+      margin: 0 10px;
+      padding: 9px 10px;
+      border-bottom: 1px solid #b70000;
+      border-top: 1px solid #de3636;
+      color: #fff;
+    }
+    .nav-a:first-child { border-top: 0; }
+    .nav-a + .nav-a + .nav-a { border-bottom: 0;}
+  }
+
+  .box-10 {
+    
+  }
+
+}
