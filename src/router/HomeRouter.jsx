@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { Route, HashRouter as Router } from 'react-router-dom';
-import Css2 from '../page/css/css2';
+import { Route } from 'react-router-dom';
+import CssWorldNote from '../page/css/cssWorldNote';
+import ZTeacherBlogNote from '../page/css/ZTeacherBlogNote';
+import CssOtherNote from '../page/css/cssOtherNote';
 
-export default class MainContent extends Component {
+export default class HomeRouter extends Component {
 
   render () {
     return (
       <div>
-        <Router>
-          <Route exact path="/" component={Css2}></Route>
-        </Router>
+        <Route exact path="/home" component={CssWorldNote}></Route>
+        <Route path="/home/ZTeacherBlogNote" component={ZTeacherBlogNote}></Route>
+        <Route path="/home/cssOtherNote" component={CssOtherNote}></Route>
       </div>
     )
   }

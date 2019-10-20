@@ -9,6 +9,10 @@ const { Header, Content, Sider } = Layout;
 
 export default class Home extends Component {
 
+  componentDidMount () {
+    this.props.history.push({ pathname: 'home' });
+  }
+
   jump (path) {
     this.props.history.push({ pathname: path });
   }

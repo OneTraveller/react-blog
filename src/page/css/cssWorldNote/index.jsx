@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Icon } from 'antd';
 import imgUrl from '../../../static/img/ai.jpg';
 import zIndexImgUrl from '../../../static/img/zIndex.jpg';
-import './css2.scss';
+import './index.scss';
 
 export default class Css2 extends Component {
   render () {
     return (
       <div className="css2-page">
-        <h1>读css世界实用技巧</h1>
+        <h1>读css世界笔记</h1>
 
         <h3>1. border扩大点击区域</h3>
         <p>
@@ -134,6 +134,10 @@ export default class Css2 extends Component {
             <p>footer</p>
           </div>
         </div> */}
+
+        <div className="footer">
+          最后附上 <a href="https://demo.cssworld.cn/" target="blank">css demo链接</a>
+        </div>
 
       </div>
     )

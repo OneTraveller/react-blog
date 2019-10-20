@@ -5,8 +5,9 @@ export default {
       icon: 'user',
       key: 'key1',
       children: [
-        { title: 'css', path: '/home' },
-        { title: 'css3', path: '/home/cba' },
+        { title: '读css世界笔记', path: '/home' },
+        { title: '读张老师博客笔记', path: '/home/ZTeacherBlogNote' },
+        { title: 'css其他笔记', path: '/home/cssOtherNote' },
       ]
     },
     {
