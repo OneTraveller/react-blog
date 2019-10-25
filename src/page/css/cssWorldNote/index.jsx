@@ -7,7 +7,7 @@ import './index.scss';
 export default class Css2 extends Component {
   render () {
     return (
-      <div className="css2-page">
+      <div className="css-world-note">
         <h1>读css世界笔记</h1>
 
         <h3>1. border扩大点击区域</h3>

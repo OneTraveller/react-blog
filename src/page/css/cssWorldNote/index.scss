@@ -1,17 +1,18 @@
-.css2-page {
-  h1 {
-    font-size: 1.3em;
-    font-weight: 700;
-  }
+h1 {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+[class^="box-"] {
+  margin: 10px;
+}
+
+.css-world-note {
 
   @mixin common($width, $height) {
     width: $width;
     height: $height;
     border: 1px solid;
-  }
-
-  [class^="box-"] {
-    margin: 10px;
   }
 
   text-align: left;
