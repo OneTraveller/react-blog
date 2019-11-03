@@ -7,6 +7,7 @@ export default {
       children: [
         { title: '读css世界笔记', path: '/home' },
         { title: '读张老师博客笔记', path: '/home/ZTeacherBlogNote' },
+        { title: 'grid网格布局', path: '/home/grid' },
         { title: 'css其他笔记', path: '/home/cssOtherNote' },
       ]
     },
