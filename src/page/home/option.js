@@ -16,8 +16,9 @@ export default {
       icon: 'laptop',
       key: 'key2',
       children: [
-        { title: 'es6', path: '/home/inlandNews' },
-        { title: '面向对象', path: '/home/foreignNews' },
+        { title: 'es6', path: '/home/es6' },
+        { title: '面向对象', path: '/home/oop' },
+        { title: 'webSocket', path: '/home/webSocket' },
       ]
     },
   ],
