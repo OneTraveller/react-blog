@@ -18,7 +18,7 @@
         border-radius: 50%;
         overflow: hidden;
       }
-    
+
       .pie-left,
       .pie-right {
         width: 50%;
@@ -27,30 +27,30 @@
         position: relative;
         overflow: hidden;
       }
-    
+
       .pie-left::before,
-        .pie-right::before,
-        .pie-right::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background-color: teal;
-        }
-    
+      .pie-right::before,
+      .pie-right::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: teal;
+      }
+
       .pie-left::before {
         left: 100%;
         transform-origin: left;
         transform: rotate(calc(3.6deg * (var(--percent) - 50)));
         opacity: calc(99999 * (var(--percent) - 50));
       }
-  
+
       .pie-right::before {
         right: 100%;
         transform-origin: right;
         transform: rotate(calc(3.6deg * var(--percent)));
       }
-  
+
       .pie-right::after {
         opacity: calc(99999 * (var(--percent) - 50));
       }
@@ -64,7 +64,7 @@
         border-radius: 50%;
         overflow: hidden;
       }
-  
+
       .pie-spin2-left,
       .pie-spin2-right {
         width: 50%;
@@ -73,7 +73,7 @@
         position: relative;
         overflow: hidden;
       }
-  
+
       .pie-spin2-left::before,
       .pie-spin2-right::before {
         content: '';
@@ -82,37 +82,40 @@
         height: 100%;
         background-color: teal;
       }
-  
+
       .pie-spin2-left::before {
         left: 100%;
         transform-origin: left;
         animation: spinWait2 3.2s infinite linear;
       }
-  
+
       .pie-spin2-right::before {
         right: 100%;
         transform-origin: right;
         animation: spinWait1 3.2s infinite linear;
       }
-  
+
       @keyframes spinWait1 {
         0% {
           transform: rotate(0deg);
         }
-        25%, 50% {
+        25%,
+        50% {
           transform: rotate(180deg);
         }
-        75%, 100% {
+        75%,
+        100% {
           transform: rotate(360deg);
         }
       }
-  
+
       @keyframes spinWait2 {
         0%,
         25% {
           transform: rotate(0deg);
         }
-        50%, 75% {
+        50%,
+        75% {
           transform: rotate(180deg);
         }
         100% {
@@ -126,7 +129,15 @@
     &.flow-colorful {
       max-width: 600px;
       height: 150px;
-      background: linear-gradient(to right, red, yellow, lime, aqua, blue, fuchsia);
+      background: linear-gradient(
+        to right,
+        red,
+        yellow,
+        lime,
+        aqua,
+        blue,
+        fuchsia
+      );
       animation: hue 6s linear infinite;
     }
 
@@ -155,7 +166,8 @@
       left: 0;
       bottom: 0; */
       height: 1000px;
-      background: linear-gradient(to right top, teal 50%, transparent 50%) no-repeat -10px 0;
+      background: linear-gradient(to right top, teal 50%, transparent 50%)
+        no-repeat -10px 0;
       background-size: calc(100% + 20px) calc(100% - 100px + 5px);
       pointer-events: none;
       mix-blend-mode: darken;
@@ -174,7 +186,7 @@
   }
 
   .box-4 {
-    img{
+    img {
       width: 200px;
       margin-right: 10px;
       & + img {
@@ -185,13 +197,18 @@
 
   .box-5 {
     display: inline-block;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23f00' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E") repeat-x 0 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23f00' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E")
+      repeat-x 0 100%;
     background-size: 20px auto;
     animation: waveMove 1s infinite linear;
 
     @keyframes waveMove {
-      from { background-position: 0 100% }
-      to { background-position: -20px 100% }
+      from {
+        background-position: 0 100%;
+      }
+      to {
+        background-position: -20px 100%;
+      }
     }
   }
 
@@ -213,16 +230,31 @@
     }
 
     @keyframes borderAround {
-      0%, 100% { clip: rect(0 200px 2px 0) }
-      25% { clip: rect(0 200px 200px 200px) }
-      50% { clip: rect(200px 200px 200px 0) }
-      75% { clip: rect(0 2px 200px 0) }
+      0%,
+      100% {
+        clip: rect(0 200px 2px 0);
+      }
+      25% {
+        clip: rect(0 200px 200px 200px);
+      }
+      50% {
+        clip: rect(200px 200px 200px 0);
+      }
+      75% {
+        clip: rect(0 2px 200px 0);
+      }
     }
   }
 
   .box-7 {
     width: 200px;
-    background: repeating-linear-gradient(135deg, transparent, transparent 3px, #000 3px, #000 8px);
+    background: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 3px,
+      #000 3px,
+      #000 8px
+    );
     animation: shine 1s infinite linear;
     overflow: hidden;
     .content {
@@ -247,7 +279,20 @@
     display: inline-block;
     padding: 100px 200px;
     background-color: #fff;
-    background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%), linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%);
+    background-image: linear-gradient(
+        45deg,
+        #eee 25%,
+        transparent 25%,
+        transparent 75%,
+        #eee 75%
+      ),
+      linear-gradient(
+        45deg,
+        #eee 25%,
+        transparent 25%,
+        transparent 75%,
+        #eee 75%
+      );
     // background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%);
     background-size: 16px 16px;
     background-position: 0 0, 8px 8px;
@@ -269,7 +314,7 @@
     .clip-shape {
       width: 100px;
       height: 100px;
-      outline: 9999px solid rgba(0, 0, 0, .5);
+      outline: 9999px solid rgba(0, 0, 0, 0.5);
       position: absolute;
       left: 15px;
       right: 0;
@@ -295,25 +340,25 @@
       top: 0;
       bottom: 0;
       margin: auto;
-      background-color: rgba(0,0,0,.75);
+      background-color: rgba(0, 0, 0, 0.75);
       /* 实际开发需要-webkit- */
       mask: no-repeat center;
-      mask-image: linear-gradient(black, black), url(https://www.zhangxinxu.com/study/201903/css-idea/star.svg);
+      mask-image: linear-gradient(black, black),
+        url(./../../../static/img/star.svg);
       mask-size: cover, 120px 120px;
       mask-composite: exclude;
       mask-composite: source-out;
       animation: starIn 2s infinite;
     }
     @keyframes starIn {
-        from {
-            -webkit-mask-size: 100%, 0 0;
-            mask-size: 100%, 0 0;
-        }
-        to {
-            -webkit-mask-size: 100%, 300% 300%;
-            mask-size: 100%, 300% 300%;
-        }
+      from {
+        -webkit-mask-size: 100%, 0 0;
+        mask-size: 100%, 0 0;
+      }
+      to {
+        -webkit-mask-size: 100%, 300% 300%;
+        mask-size: 100%, 300% 300%;
+      }
     }
   }
-
 }
