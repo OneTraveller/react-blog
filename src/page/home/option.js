@@ -9,7 +9,7 @@ export default {
         { title: '读张老师博客笔记', path: '/home/ZTeacherBlogNote' },
         { title: 'grid网格布局', path: '/home/grid' },
         { title: 'css其他笔记', path: '/home/cssOtherNote' },
-      ]
+      ],
     },
     {
       title: 'js',
@@ -19,7 +19,8 @@ export default {
         { title: 'es6', path: '/home/es6' },
         { title: '面向对象', path: '/home/oop' },
         { title: 'webSocket', path: '/home/webSocket' },
-      ]
+        { title: '放大镜', path: '/home/zoom' },
+      ],
     },
   ],
-}
+};

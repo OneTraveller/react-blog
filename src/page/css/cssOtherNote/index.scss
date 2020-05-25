@@ -1,65 +1,63 @@
 .other-note {
   text-align: left;
+  .box-1,
+  .box-2,
+  .box-3,
+  .box-4,
+  .box-5 {
+    border: 1px solid #409eff;
+    border-radius: 3px;
+  }
 
   .box-1 {
-    input {
-      display: none;
-    }
-    input:checked + label {
-      color: green;
-    }
-    label {
-      display: inline-block;
-      position: relative;
-      line-height: 50px;
-      color: #aaa;
-      padding-left: 50px;
-    }
-    label:after {
-      content: "";
-      width: 20px;
-      height: 20px;
-      border: 1px solid green;
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      border-radius: 20px;
-    }
-    input:checked+label:after {
-      background-color: green;
-    }
-  }
+    height: 100px;
+    position: relative;
 
-  .box-2 {
-    input {
-      display: none;
+    @keyframes loading-rotate {
+      100% {
+        transform: rotate(360deg);
+      }
     }
-    label {
-      display: inline-block;
-      line-height: 50px;
-      position: relative;
-      padding-left: 50px;
-      color: #aaa;
+
+    @keyframes loading-dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -40px;
+      }
+      100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -120px;
+      }
     }
-    input:checked + label {
-      color: green;
-    }
-    label:after {
-      content: "";
-      width: 20px;
-      height: 20px;
-      border: 1px solid;
-      position: absolute;
-      top: 15px;
-      left: 15px;
-    }
-    input:checked + label:before {
-      content: "\2713";
-      height: 20px;
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       top: 0;
-      left: 20px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.7);
+    }
+    .circular {
+      height: 42px;
+      width: 42px;
+      animation: loading-rotate 2s linear infinite;
+    }
+    .path {
+      animation: loading-dash 1.5s ease-in-out infinite;
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: 0;
+      stroke-width: 2;
+      stroke: #409eff;
+      stroke-linecap: round;
     }
   }
-
 }
